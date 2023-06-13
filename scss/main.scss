@@ -1,0 +1,166 @@
+@import "normalize";
+@import "vars";
+@import "mixins";
+@import "extends";
+
+* {
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+}
+
+html,
+body {
+   min-height: 100vh;
+   font-family: serif;
+   font-size: $font_size_main;
+   background: $background_main;
+}
+
+.container {
+   max-width: $container_width;
+   margin: 0 auto;
+}
+
+.header {
+   margin: 121px 0 40px;
+}
+
+.top {
+   max-width: 450px;
+   margin: 0 auto;
+   position: relative;
+   &::after {
+      content: "";
+      position: absolute;
+      top: 201px;
+      left: 50%;
+      width: 2px;
+      height: 560px;
+      background-color: #ffcc00;
+   }
+
+   &__subtitle {
+      color: #898f8f;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 1.3;
+      text-align: center;
+      text-transform: uppercase;
+      padding-bottom: 15px;
+   }
+
+   &__title {
+      color: $color_add;
+      font-family: "Roboto";
+      font-weight: 900;
+      font-size: 60px;
+      line-height: 1.1;
+      text-align: center;
+      text-transform: uppercase;
+      padding-bottom: 40px;
+   }
+   &__img {
+      margin: 0 auto;
+      width: 18px;
+      position: relative;
+      &::after,
+      &::before {
+         content: "";
+         position: absolute;
+         bottom: 50%;
+         height: 2px;
+         background-color: #ffcc00;
+      }
+      &::before {
+         right: 25px;
+         width: 210px;
+      }
+      &::after {
+         left: 25px;
+         width: 210px;
+      }
+   }
+}
+
+.main {
+   margin: 0 70px;
+   padding-top: 65px;
+}
+
+.slider {
+   @include flex(space-between, center, 170px);
+   margin: 0 auto;
+   max-width: 1030px;
+   &__descr,
+   &__photo {
+      width: 430px;
+   }
+}
+
+.descr {
+   &__title {
+      color: $color_main;
+      font-family: "Roboto";
+      font-weight: 900;
+      font-size: 36px;
+      line-height: 1.2;
+      text-align: center;
+      text-transform: capitalize;
+      margin-bottom: 60px;
+   }
+
+   &__subtitle {
+      font-family: $font_family_main;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 1.5;
+      text-align: center;
+      text-transform: capitalize;
+      color: $color_main;
+      margin-bottom: 30px;
+   }
+
+   &__social {
+      margin: 0 auto;
+   }
+
+   &__text {
+      width: 430px;
+      font-family: $font_family_main;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 1.7;
+      text-align: center;
+      color: #333333;
+      margin: 49px auto;
+   }
+   &__button {
+      display: block;
+      margin: 0 auto;
+   }
+}
+
+.social {
+   @include flex(space-between, center, 5px);
+   max-width: 135px;
+   &__link {
+      @include flex(center, center);
+      height: 30px;
+      width: 30px;
+      background: #ffffff;
+      border: 2px solid #cccccc;
+      border-radius: 100%;
+   }
+   &__icon {
+      fill: #cccccc;
+   }
+}
+
+.button {
+   @extend %btn;
+}
+
+.social__link:hover .social__icon {
+   fill: $color_add;
+}
