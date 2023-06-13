@@ -35,9 +35,10 @@ body {
       position: absolute;
       top: 201px;
       left: 50%;
-      width: 2px;
+      width: 1px;
       height: 560px;
-      background-color: #ffcc00;
+      background-color: $color_add;
+      z-index: 2;
    }
 
    &__subtitle {
@@ -69,8 +70,8 @@ body {
          content: "";
          position: absolute;
          bottom: 50%;
-         height: 2px;
-         background-color: #ffcc00;
+         height: 1px;
+         background-color: $color_add;
       }
       &::before {
          right: 25px;
@@ -86,6 +87,7 @@ body {
 .main {
    margin: 0 70px;
    padding-top: 65px;
+   padding-bottom: 122px;
 }
 
 .slider {
@@ -96,6 +98,25 @@ body {
    &__photo {
       width: 430px;
    }
+}
+
+.photo {
+   @include flex(center, center);
+   position: relative;
+   width: 430px;
+   height: 430px;
+   border: 1px solid $color_add;
+   z-index: 1;
+}
+
+.photo::after {
+   content: "";
+   position: absolute;
+   width: 430px;
+   height: 430px;
+   background: $background_main;
+   transform: rotate(45deg);
+   z-index: -1;
 }
 
 .descr {
@@ -148,9 +169,12 @@ body {
       @include flex(center, center);
       height: 30px;
       width: 30px;
-      background: #ffffff;
+      background: $background_main;
       border: 2px solid #cccccc;
       border-radius: 100%;
+      &:hover {
+         border: 2px solid $color_add;
+      }
    }
    &__icon {
       fill: #cccccc;

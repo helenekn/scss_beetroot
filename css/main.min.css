@@ -287,9 +287,10 @@ body {
   position: absolute;
   top: 201px;
   left: 50%;
-  width: 2px;
+  width: 1px;
   height: 560px;
   background-color: #ffcc00;
+  z-index: 2;
 }
 .top__subtitle {
   color: #898f8f;
@@ -319,7 +320,7 @@ body {
   content: "";
   position: absolute;
   bottom: 50%;
-  height: 2px;
+  height: 1px;
   background-color: #ffcc00;
 }
 .top__img::before {
@@ -334,6 +335,7 @@ body {
 .main {
   margin: 0 70px;
   padding-top: 65px;
+  padding-bottom: 122px;
 }
 
 .slider {
@@ -354,6 +356,37 @@ body {
 }
 .slider__descr, .slider__photo {
   width: 430px;
+}
+
+.photo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 0;
+  position: relative;
+  width: 430px;
+  height: 430px;
+  border: 1px solid #ffcc00;
+  z-index: 1;
+}
+
+.photo::after {
+  content: "";
+  position: absolute;
+  width: 430px;
+  height: 430px;
+  background: #ffffff;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  z-index: -1;
 }
 
 .descr__title {
@@ -427,6 +460,9 @@ body {
   background: #ffffff;
   border: 2px solid #cccccc;
   border-radius: 100%;
+}
+.social__link:hover {
+  border: 2px solid #ffcc00;
 }
 .social__icon {
   fill: #cccccc;
