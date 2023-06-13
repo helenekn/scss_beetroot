@@ -183,6 +183,24 @@ body {
 
 .button {
    @extend %btn;
+   position: relative;
+   &::before {
+      content: "";
+      position: absolute;
+      width: 50px;
+      height: 4px;
+      top: -25px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(
+         to left,
+         #ffcc00 20%,
+         #ffffff 20% 30%,
+         #ffcc00 30% 70%,
+         #ffffff 70% 80%,
+         #ffcc00 80%
+      );
+   }
 }
 
 .social__link:hover .social__icon {

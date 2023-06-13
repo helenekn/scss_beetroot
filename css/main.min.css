@@ -468,6 +468,22 @@ body {
   fill: #cccccc;
 }
 
+.button {
+  position: relative;
+}
+.button::before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 4px;
+  top: -25px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: -webkit-gradient(linear, right top, left top, color-stop(20%, #ffcc00), color-stop(20%, #ffffff), color-stop(30%, #ffcc00), color-stop(70%, #ffffff), color-stop(80%, #ffcc00));
+  background: linear-gradient(to left, #ffcc00 20%, #ffffff 20% 30%, #ffcc00 30% 70%, #ffffff 70% 80%, #ffcc00 80%);
+}
+
 .social__link:hover .social__icon {
   fill: #ffcc00;
 }/*# sourceMappingURL=main.min.css.map */
