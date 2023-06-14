@@ -250,7 +250,7 @@ input[type=checkbox], input[type=radio] {
   text-transform: uppercase;
   color: #666666;
   border: 1px solid #ffcc00;
-  background-color: #fff;
+  background-color: #ffffff;
 }
 
 * {
@@ -292,7 +292,7 @@ body {
   background-color: #ffcc00;
   z-index: 2;
 }
-.top__subtitle {
+.top__suptitle {
   color: #898f8f;
   font-weight: 500;
   font-size: 18px;
@@ -389,28 +389,51 @@ body {
   z-index: -1;
 }
 
+.descr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 430px;
+}
 .descr__title {
+  position: relative;
   color: #666666;
   font-family: "Roboto";
   font-weight: 900;
   font-size: 36px;
   line-height: 1.2;
-  text-align: center;
   text-transform: capitalize;
   margin-bottom: 60px;
+}
+.descr__title::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 1px;
+  bottom: -70%;
+  left: 50%;
+  background-color: #ffcc00;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 .descr__subtitle {
   font-family: "Raleway", sans-serif;
   font-weight: 400;
   font-size: 24px;
   line-height: 1.5;
-  text-align: center;
   text-transform: capitalize;
   color: #666666;
   margin-bottom: 30px;
-}
-.descr__social {
-  margin: 0 auto;
 }
 .descr__text {
   width: 430px;
@@ -420,11 +443,10 @@ body {
   line-height: 1.7;
   text-align: center;
   color: #333333;
-  margin: 49px auto;
+  margin: 49px auto 20px;
 }
-.descr__button {
-  display: block;
-  margin: 0 auto;
+.descr__line {
+  margin-bottom: 25px;
 }
 
 .social {
@@ -468,22 +490,14 @@ body {
   fill: #cccccc;
 }
 
-.button {
-  position: relative;
-}
-.button::before {
-  content: "";
-  position: absolute;
-  width: 50px;
-  height: 4px;
-  top: -25px;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  background: -webkit-gradient(linear, right top, left top, color-stop(20%, #ffcc00), color-stop(20%, #ffffff), color-stop(30%, #ffcc00), color-stop(70%, #ffffff), color-stop(80%, #ffcc00));
-  background: linear-gradient(to left, #ffcc00 20%, #ffffff 20% 30%, #ffcc00 30% 70%, #ffffff 70% 80%, #ffcc00 80%);
-}
-
 .social__link:hover .social__icon {
   fill: #ffcc00;
+}
+
+.line {
+  display: block;
+  width: 50px;
+  height: 4px;
+  background: -webkit-gradient(linear, right top, left top, color-stop(20%, #ffcc00), color-stop(20%, #ffffff), color-stop(30%, #ffcc00), color-stop(70%, #ffffff), color-stop(80%, #ffcc00));
+  background: linear-gradient(to left, #ffcc00 20%, #ffffff 20% 30%, #ffcc00 30% 70%, #ffffff 70% 80%, #ffcc00 80%);
 }/*# sourceMappingURL=main.min.css.map */

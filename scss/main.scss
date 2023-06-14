@@ -41,7 +41,7 @@ body {
       z-index: 2;
    }
 
-   &__subtitle {
+   &__suptitle {
       color: #898f8f;
       font-weight: 500;
       font-size: 18px;
@@ -120,33 +120,43 @@ body {
 }
 
 .descr {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   max-width: 430px;
    &__title {
+      position: relative;
       color: $color_main;
       font-family: "Roboto";
       font-weight: 900;
       font-size: 36px;
       line-height: 1.2;
-      text-align: center;
       text-transform: capitalize;
       margin-bottom: 60px;
+      &::after {
+         content: "";
+         position: absolute;
+         width: 100px;
+         height: 1px;
+         bottom: -70%;
+         left: 50%;
+         background-color: $color_add;
+         transform: translateX(-50%);
+      }
    }
-
    &__subtitle {
       font-family: $font_family_main;
       font-weight: 400;
       font-size: 24px;
       line-height: 1.5;
-      text-align: center;
       text-transform: capitalize;
       color: $color_main;
       margin-bottom: 30px;
    }
 
-   &__social {
-      margin: 0 auto;
-   }
-
    &__text {
+      // position: relative;
       width: 430px;
       font-family: $font_family_main;
       font-weight: 500;
@@ -154,11 +164,28 @@ body {
       line-height: 1.7;
       text-align: center;
       color: #333333;
-      margin: 49px auto;
+      margin: 49px auto 20px;
+      // &::before {
+      //    content: "";
+      //    position: absolute;
+      //    width: 50px;
+      //    height: 4px;
+      //    top: 120%;
+      //    left: 50%;
+      //    transform: translateX(-50%);
+      //    background: linear-gradient(
+      //       to left,
+      //       $color_add 20%,
+      //       $background_main 20% 30%,
+      //       $color_add 30% 70%,
+      //       $background_main 70% 80%,
+      //       $color_add 80%
+      //    );
+      // }
    }
-   &__button {
-      display: block;
-      margin: 0 auto;
+
+   &__line {
+      margin-bottom: 25px;
    }
 }
 
@@ -183,26 +210,22 @@ body {
 
 .button {
    @extend %btn;
-   position: relative;
-   &::before {
-      content: "";
-      position: absolute;
-      width: 50px;
-      height: 4px;
-      top: -25px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: linear-gradient(
-         to left,
-         #ffcc00 20%,
-         #ffffff 20% 30%,
-         #ffcc00 30% 70%,
-         #ffffff 70% 80%,
-         #ffcc00 80%
-      );
-   }
 }
 
 .social__link:hover .social__icon {
    fill: $color_add;
+}
+
+.line {
+   display: block;
+   width: 50px;
+   height: 4px;
+   background: linear-gradient(
+      to left,
+      $color_add 20%,
+      $background_main 20% 30%,
+      $color_add 30% 70%,
+      $background_main 70% 80%,
+      $color_add 80%
+   );
 }

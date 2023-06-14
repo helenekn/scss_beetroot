@@ -7,6 +7,6 @@
    text-align: center;
    text-transform: uppercase;
    color: $color_main;
-   border: 1px solid #ffcc00;
-   background-color: #fff;
+   border: 1px solid $color_add;
+   background-color: $background_main;
 }
